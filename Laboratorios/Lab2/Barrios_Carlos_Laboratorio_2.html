@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Laboratorio 2</title>
+    </head>
+    <body>
+
+        <h1>Laboratorio 2</h1>
+        <p>Carlos Barrios / 8-904-983</p>
+        <!--Punto 1 -->
+        <h3><p>¿Qué es Javascript y en qué se asemeja a Java?</p></h3>
+        <p>JavaScript es un lenguaje de progamación de alto nivel, dinámico e interpretado, diseñado para tareas en páginas web. A pesar del parecido nombre no guarda ninguna similitud con java.</p>
+
+        <!--Punto 2 -->
+        <div>
+            <h4>Calculos Matematicos</h4>
+            Numero 1: <input type="number" id="var1" value="2">
+            Numero 2: <input type="number" id="var2" value="5">
+            = <output id="resultado"></output>
+        </div>
+
+        <div>
+            <p></p>
+            <button onclick="suma()">Suma</button>
+            <button onclick="resta()">Resta</button>
+            <button onclick="multiplica()">Multiplicación</button>
+            <button onclick="divide()">Divición</button>
+        </div>
+        <!--Punto 3 -->
+        <div>
+            <h4>Concatenar dos cadenas</h4>
+            Cadena 1: <input type="string" id="cad1" value="hello">
+            Cadena 2: <input type="string" id="cad2" value="How are You?">
+            = <output id="concatenado"></output>
+        </div>
+        <div>
+            <p></p>
+            <button onclick="concatenar()">Concatenar</button>
+        </div>
+        <!--Punto 4 -->
+        <div>
+            <h4>Variables Const</h4>
+            <button onclick="constante()">Imprimir</button>
+            = <output id="vconst"></output>    
+        </div>
+
+        <!--Punto 5 -->
+        <div>
+            <h4>Variables dentro del Objeto</h4>
+            <button onclick="objeto()">Mostrar valores en el objeto</button>
+        </div>
+
+        <p>= <output id="obj1"></output></p>
+        <p>= <output id="obj2"></output></p>
+        <p>= <output id="obj3"></output></p>
+        <p>= <output id="obj4"></output></p>
+
+        <!--Procesos js -->
+        <script>
+            //declaracion de variables
+            var var1, var2, total;
+            const va1='A1', va2='B2';
+
+            tabla = new Object();
+            tabla.columna = 25;
+            tabla.fila = 'Carlos';
+            tabla.pk = true;
+            tabla.fk;
+
+            //funcion de calculos matematicos
+            // suma
+            function suma(){
+                var1=parseInt(document.getElementById("var1").value);
+                var2=parseInt(document.getElementById("var2").value);
+                total = var1+var2;
+                document.getElementById("resultado").innerHTML = total;
+                console.log(total);
+            }
+            //resta
+            function resta(){
+
+                var1=parseInt(document.getElementById("var1").value);
+                var2=parseInt(document.getElementById("var2").value);
+                total = var1-var2;
+                document.getElementById("resultado").innerHTML = total;
+                console.log (total);
+            }
+            //multiplica x - *
+            function multiplica(){
+
+                var1=parseInt(document.getElementById("var1").value);
+                var2=parseInt(document.getElementById("var2").value);
+                total = var1*var2;
+                document.getElementById("resultado").innerHTML = total;
+                console.log (total);
+            }
+            //divicion
+            function divide(){
+
+                var1=parseInt(document.getElementById("var1").value);
+                var2=parseInt(document.getElementById("var2").value);
+                total = var1/var2;
+                document.getElementById("resultado").innerHTML = total;
+                console.log (total);
+            }
+            //funcion para concatenar 
+            function concatenar(){
+                let cad1=document.getElementById("cad1").value;
+                let cad2=document.getElementById("cad2").value;
+                let conca = cad1+cad2;
+                document.getElementById("concatenado").innerHTML = conca;
+                console.log(conca);
+            }
+            //funcion para mostrar las variables const
+            function constante(){
+                var con = va1 + va2;
+                document.getElementById("vconst").innerHTML = con;
+                console.log(con);
+            }
+            //funcion para imprimir el objeto
+            function objeto(){
+            document.getElementById("obj1").innerHTML = typeof tabla['columna'];
+            document.getElementById("obj2").innerHTML = typeof tabla['fila'];
+            document.getElementById("obj3").innerHTML = typeof tabla['pk'];
+            document.getElementById("obj4").innerHTML = typeof tabla['fk'];
+            console.log (tabla['columna']);
+            console.log (tabla['fila']);
+            console.log (tabla['pk']);
+            console.log (tabla['fk']);
+		}
+        </script>
+
+    </body>
+</html>
