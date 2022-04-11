@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Laboratorio 3</title>
+    </head>
+    <body>
+
+        <h1>Laboratorio 3</h1>
+        <p>Carlos Barrios / 8-904-983</p>
+        <!--Punto 1 -->
+        <h4><p>Palindromo de Doble Base</p></h4>
+
+        <!--Punto 2 -->
+        <div>
+            <h4>Detalle de Caracteres</h4>
+            <p>Introduce un texto para contar las letras</p>
+            <input type="text" id="text" size="100" name="text" value="cadena para contar las letras">
+            <button onclick="contar('text')">Contar</button>
+            <button onclick="borrar('text')">Limpiar</button>
+        </div>
+
+        <p id="resultado2"></p>
+
+        <!--Punto 3 -->
+        <div>
+            <h4>Validar Año Bisiesto</h4>
+            Indique un año: <input type="number" id="anio" value="1996">
+            = <output id="resultado3"></output>
+        </div>
+        <div>
+            <p></p>
+            <button onclick="validanio()">Imprimir</button>
+        </div>
+
+        <!--Punto 4 -->
+        <div>
+            <h4>Suma de Numeros Primos</h4>
+            Indique un numero: <input type="number" id="num" value="7">
+            <button onclick="sumprimos()">Imprimir</button>
+            <p id="resultado4"></p>
+            = <output id="respuesta5"></output>    
+        </div>
+
+        <!--Procesos js -->
+        <script>
+            //declaracion de variables
+            var var1, var2;
+
+            //funcion de paliandromo
+
+            //funcion de cantidad de caracteres
+            function contar(text) {
+                var mensaje = document.getElementById(text).value;
+                var cadena = mensaje.split('');
+                var contador = {};
+                cadena.forEach(function(valor) {
+                if (contador[valor] === undefined) {contador[valor] = 1} else {contador[valor] += 1}
+                });
+                document.getElementById('resultado2').innerHTML = '<ul>';
+                for (var clave in contador) {
+                document.getElementById('resultado2').innerHTML += '<li>' + clave + ':' + contador[clave] + '</li>';
+                console.log(clave, contador[clave])
+                }
+                document.getElementById('resultado2').innerHTML += '<ul>';
+            }
+            //limpia la los campos
+            function borrar(text) {
+                document.getElementById(text).value = '';
+                document.getElementById('resultado2').innerHTML = '';
+            }
+
+            //funcion para validar año bisiesto
+            function validanio(){
+
+                let year=parseInt(document.getElementById("anio").value);
+                const bisies = (year) => {
+                return (year % 400 === 0) ? true : 
+                (year % 100 === 0) ? false : 
+                year % 4 === 0;
+                };
+                document.getElementById("resultado3").innerHTML = bisies(year);
+                console.log(bisies(year))
+            }
+
+            //funcion para sumar numeros primos
+            function sumprimos(){
+                let num = parseInt(document.getElementById("num").value);
+                let primos = [1];
+                let divisible = false;
+                for(let i = 2; i <= num; i++){
+                    for(let j = 2; j < i; j++){
+                        if(i % j === 0){
+                            divisible = true;
+                            break;
+                        }
+                        divisible = false;
+                    }
+                        if(!divisible){
+                            primos.push(i)
+                        }
+                }
+                let suma = primos.reduce((acc, el) => acc + el, 0)
+                document.getElementById("resultado4").innerHTML = primos;
+                document.getElementById("respuesta5").innerHTML = suma;
+                console.log(primos)
+                console.log(suma)
+            }
+
+        </script>
+
+    </body>
+</html>
