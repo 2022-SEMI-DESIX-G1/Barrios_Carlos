@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROYECTO 1 - POKEAPI/CACHE</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,800;1,700&display=swap"
+  rel="stylesheet">
+</head>
+<body>
+
+  <section class="section">
+    <main class="container">
+      <img class="img" src="pokeapi_logo.png" alt="" srcset="">   
+      <form class="pokemon-form" action="">
+        <div class="chidren flex">
+            <label for="pokemon-input"class="item">Nombre:</label>
+            <div class="checkbox">
+              <input type="checkbox" name="Sprites" id="sprites" class="item"/>
+              <label for="Sprites">Sprites</label>
+
+              <input type="checkbox" name="Ubicación" id="ubicacion" class="item"/>
+              <label for="Ubicación">Ubicación</label>
+
+              <input type="checkbox" name="chain" id="chain" class="item"/>
+              <label for="chain">Cadena de evolución</label><br>
+            </div>
+        </div>
+        <div class="chidren grd">
+          <input id="pokemon-input" type="text">
+            <button type="submit" class="btn">Buscar</button>
+        </div>
+      </form>
+    </main>
+
+    <div id="results-cont"></div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
