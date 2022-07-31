@@ -1,0 +1,58 @@
+h1 {
+	color: #f1f1f1;
+}
+		
+#principal {
+	background: rgb(106, 106, 209);
+	background-color: rgba(117, 108, 108, 0.966);
+	text-align: center;
+	color: #f1f1f1;
+	padding: 1rem;
+}
+
+#respuesta {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#confirmacion div {
+	display: flex;
+	justify-content: center;
+	padding: 0.5rem;
+	border: 1px solid #ccc;
+	color: white;
+	background-color: rgb(116, 102, 102);
+	margin-bottom: 0.5rem;
+	margin-top: 0.5rem;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+} 
+
+#boton-calcular {
+	color: white;
+	border-radius: 7px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	background: rgb(1, 5, 250);
+}
+
+.carta {
+	display: flex;
+	justify-content: center;
+	border: 1px solid rgba(12, 2, 2, 0.247);
+	background-color: white;
+	padding: 0.8rem;
+	margin: 0.5rem;
+	min-width: 50px;
+	min-height: auto;
+	cursor: pointer;
+	margin-top: 1rem;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+}
+
+.carta:hover {
+	box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2);
+	color: darkred;
+}
